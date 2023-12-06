@@ -13,6 +13,8 @@ import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { useRouter } from "next/router";
+import { CiLogout } from "react-icons/ci";
+import { AiFillProfile } from "react-icons/ai";
 const Navbar = () => {
   const { width } = useWindowSize();
   const isSmallScreen = width <= 767;
@@ -74,7 +76,7 @@ const Navbar = () => {
     {
       label: (
         <div className="flex text-sm  font-bold items-center justify-start gap-2 ">
-          <IoSettingsSharp /> Profile
+          <AiFillProfile /> Profile
         </div>
       ),
       key: "1",
@@ -90,7 +92,7 @@ const Navbar = () => {
     {
       label: (
         <div className="flex text-sm  font-bold items-center justify-start gap-2 underline ">
-          <IoSettingsSharp /> Log Out
+          <CiLogout /> Log Out
         </div>
       ),
       key: "3",
@@ -139,20 +141,22 @@ const Navbar = () => {
               >
                 <div className="flex flex-col items-center gap-0 w-full ">
                   {session ? (
-                    <Dropdown
-                      menu={{
-                        items,
-                        onClick,
-                      }}
-                    >
-                      <a
-                        onClick={(e) => e.preventDefault()}
-                        className="flex text-lg gap-2 items-center"
+                    validLocation ? null : (
+                      <Dropdown
+                        menu={{
+                          items,
+                          onClick,
+                        }}
                       >
-                        <FaUserAlt className="text-orange-400 text-sm" />{" "}
-                        {sessionData.name} {sessionData.surname}
-                      </a>
-                    </Dropdown>
+                        <a
+                          onClick={(e) => e.preventDefault()}
+                          className="flex text-lg gap-2 items-center"
+                        >
+                          <FaUserAlt className="text-orange-400 text-sm" />{" "}
+                          {sessionData.name} {sessionData.surname}
+                        </a>
+                      </Dropdown>
+                    )
                   ) : (
                     <div className="flex gap-2">
                       <Link
