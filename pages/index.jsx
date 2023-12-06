@@ -7,7 +7,7 @@ import TopSellers from "@/components/Home/Topsellers";
 import Image from "next/image";
 import React from "react";
 
-const index = () => {
+const Home = () => {
   return (
     <div className="bg-mainGray w-full min-h-screen relative overflow-hidden">
       <div className="container">
@@ -22,4 +22,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Home;

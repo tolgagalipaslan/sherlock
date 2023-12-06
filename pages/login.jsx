@@ -4,7 +4,7 @@ import Image from "next/image";
 import bcrypt from "bcryptjs";
 import { useRouter } from "next/router";
 
-const login = () => {
+const Login = () => {
   const router = useRouter();
   const isEmailValid = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -113,7 +113,7 @@ const login = () => {
               Forgot your password?
             </p>
             <div className="mt-3 text-xs  flex justify-between items-center cursor-pointer">
-              <p>Don't have an account?</p>
+              <p>Dont have an account?</p>
               <div className="py-2 px-5 bg-white border rounded-xl cursor-pointer">
                 {" "}
                 Register
@@ -134,4 +134,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

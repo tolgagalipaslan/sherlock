@@ -4,7 +4,7 @@ import Image from "next/image";
 import bcrypt from "bcryptjs";
 import { useRouter } from "next/router";
 import { uid } from "uid";
-const login = () => {
+const Register = () => {
   const [isSubmitting, setisSubmitting] = useState(false);
   const router = useRouter();
   const hashPassword = async (password) => {
@@ -192,4 +192,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Register;
