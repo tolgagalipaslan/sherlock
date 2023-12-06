@@ -229,20 +229,22 @@ const Navbar = () => {
                   <FaApple className="text-orange-400 text-sm" /> IOS App{" "}
                 </div>{" "}
                 {session ? (
-                  <Dropdown
-                    menu={{
-                      items,
-                      onClick,
-                    }}
-                  >
-                    <a
-                      onClick={(e) => e.preventDefault()}
-                      className="flex text-xs gap-2 items-center"
+                  validLocation ? null : (
+                    <Dropdown
+                      menu={{
+                        items,
+                        onClick,
+                      }}
                     >
-                      <FaUserAlt className="text-orange-400 text-sm" />{" "}
-                      {sessionData.name} {sessionData.surname}
-                    </a>
-                  </Dropdown>
+                      <a
+                        onClick={(e) => e.preventDefault()}
+                        className="flex text-xs gap-2 items-center"
+                      >
+                        <FaUserAlt className="text-orange-400 text-sm" />{" "}
+                        {sessionData.name} {sessionData.surname}
+                      </a>
+                    </Dropdown>
+                  )
                 ) : (
                   <div className="flex gap-2">
                     <Link
